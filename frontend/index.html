@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão de Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1><i class="fas fa-box-open"></i> Mini Gestão de Pedidos</h1>
+        </header>
+
+        <main class="grid-layout">
+            <section class="card" aria-labelledby="form-title">
+                <h2 id="form-title">Novo Pedido</h2>
+                <form id="new-order-form" class="form-group">
+                    <div class="input-field">
+                        <label for="customer-name">Nome do Cliente</label>
+                        <input type="text" id="customer-name" name="customer-name" placeholder="Ex: João Silva" required>
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="order-details">Detalhes do Pedido</label>
+                        <textarea id="order-details" name="order-details" rows="4" placeholder="Ex: 2x Pizza de Calabresa" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-plus"></i> Adicionar Pedido
+                    </button>
+                </form>
+            </section>
+
+            <section class="card" aria-labelledby="list-title">
+                <h2 id="list-title">Pedidos Ativos</h2>
+                <div class="table-responsive">
+                    <table id="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Resumo</th>
+                                <th class="text-center">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table-body">
+                            <tr>
+                                <td colspan="3" class="text-center">Nenhum pedido registrado.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2025 Gestão de Pedidos Pro - Sistema Interno</p>
+        </footer>
+    </div>
+
+    <div id="modal" class="modal" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>Detalhes do Pedido</h2>
+                <button class="close-btn" aria-label="Fechar Modal">&times;</button>
+            </header>
+            <div id="modal-details" class="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
